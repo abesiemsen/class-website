@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
-import { ConfigurationService } from '../services/configuration.service';
-
 import { AppComponent } from './app.component';
+import { AppRoutingModule }     from './app-routing.module';
+import { ConfigurationService } from '../services/configuration.service';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
@@ -14,23 +14,15 @@ import { HomeComponent } from './home/home.component';
     HomeComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
-    HttpClientModule,
-    RouterModule.forRoot([
-      {
-        path: '',
-        redirectTo: '/home',
-        pathMatch: 'full'
-      },
-      {
-        path: 'home',
-        component: HomeComponent
-      }
-    ])
+    HttpClientModule
   ],
   providers: [
     ConfigurationService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
