@@ -1,0 +1,85 @@
+{
+	"course" : {
+		"slug" : "F10 ART 433D",
+    "name" : "Capstone in Design 1: Research Methods (Form and Interaction)",
+    "location" : {
+      "slug" : "bixby-214",
+      "name" : "Bixby 214",
+      "building" : "Bixby",
+      "room" : "214"
+    },
+    "instructors" : [
+      { "slug" : "asiemsen",      "lastName" : "Siemsen",       "firstName" : "Abram",     "basePath" : "", "email" : "asiemsen@wustl.edu" }
+    ],
+    "students" : [
+      { "slug" : "jbyun",         "lastName" : "Byun",          "firstName" : "Ji Young",  "basePath" : "https://github.io/jbyun" },
+      { "slug" : "ccofelice",     "lastName" : "Cofelice",      "firstName" : "Claire",    "basePath" : "https://github.io/ccofelice" },
+      { "slug" : "ahammarskjold", "lastName" : "Hammarskjold",  "firstName" : "Alex",      "basePath" : "https://github.io/ahammarskjold" },
+      { "slug" : "cjahchan",      "lastName" : "Jahchan",       "firstName" : "Chantal",   "basePath" : "https://github.io/cjahchan" },
+      { "slug" : "kjundt",        "lastName" : "Jundt",         "firstName" : "Katie",     "basePath" : "https://github.io/kjundt" },
+      { "slug" : "jlee",          "lastName" : "Lee",           "firstName" : "Ji",        "basePath" : "https://github.io/jlee" },
+      { "slug" : "elim",          "lastName" : "Lim",           "firstName" : "Edward",    "basePath" : "https://github.io/elim" },
+      { "slug" : "dlitteral",     "lastName" : "Litteral",      "firstName" : "Devon",     "basePath" : "https://github.io/dlitteral" },
+      { "slug" : "kmcguffog",     "lastName" : "McGuffog",      "firstName" : "Kelly",     "basePath" : "https://github.io/kmcguffog" },
+      { "slug" : "ipavlova",      "lastName" : "Pavlova",       "firstName" : "Irina",     "basePath" : "https://github.io/ipavlova" },
+      { "slug" : "apu",           "lastName" : "Pu",            "firstName" : "Angela",    "basePath" : "https://github.io/apu" },
+      { "slug" : "jsturner",      "lastName" : "Sturner",       "firstName" : "Jordan",    "basePath" : "https://github.io/jsturner" },
+      { "slug" : "jthummel",      "lastName" : "Thummel",       "firstName" : "Julia",     "basePath" : "https://github.io/jthummel" },
+      { "slug" : "awestern",      "lastName" : "Western",       "firstName" : "Audrey",    "basePath" : "https://github.ioawestern/" }
+    ],
+    "sessions" : [
+      { "date" : "2017-08-28 08:30" },
+      { "date" : "2017-08-30 08:30" },
+      { "date" : "2017-09-04 08:30", "holiday" : "Labor Day" },
+      { "date" : "2017-09-06 08:30" },
+      { "date" : "2017-09-11 08:30" },
+      { "date" : "2017-09-13 08:30" },
+      { "date" : "2017-09-18 08:30" },
+      { "date" : "2017-09-20 08:30" },
+      { "date" : "2017-09-25 08:30" },
+      { "date" : "2017-09-27 08:30" },
+      { "date" : "2017-10-02 08:30" },
+      { "date" : "2017-10-04 08:30" },
+      { "date" : "2017-10-09 08:30" },
+      { "date" : "2017-10-11 08:30" },
+      { "date" : "2017-10-16 08:30", "holiday" : "Fall Break" },
+      { "date" : "2017-10-18 08:30" },
+      { "date" : "2017-10-23 08:30" },
+      { "date" : "2017-10-25 08:30" },
+      { "date" : "2017-10-30 08:30" },
+      { "date" : "2017-11-01 08:30" },
+      { "date" : "2017-11-06 08:30" },
+      { "date" : "2017-11-08 08:30" },
+      { "date" : "2017-11-13 08:30" },
+      { "date" : "2017-11-15 08:30" },
+      { "date" : "2017-11-20 08:30" },
+      { "date" : "2017-11-22 08:30", "holiday" : "Thanksgiving" },
+      { "date" : "2017-11-27 08:30" },
+      { "date" : "2017-11-29 08:30" },
+      { "date" : "2017-12-04 08:30" },
+      { "date" : "2017-12-06 08:30" }
+    ],
+    "projects" : [
+      {
+        "type" : "project",
+        "slug" : "p1",
+        "name" : "Project 1",
+        "start" : "2017-08-30",
+        "end" : "2017-09-18",
+        "description" : "This is the first project.",
+        "instructions" : "Make it real good.",
+        "deliverables" : [
+          { 
+            "slug" : "d1",
+            "name" : "Deliverable 1",
+            "assigned" : "2017-08-30",
+            "due" : "2017-08-06",
+            "file" : "index.html",
+            "description" : "The first deliverable.",
+            "instructions" : "Make it real good."
+          }
+        ]
+      }
+    ]
+	}
+}
