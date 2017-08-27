@@ -11,6 +11,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ProjectComponent } from './project/project.component';
 import { StudentsComponent } from './students/students.component';
 import { StudentComponent } from './student/student.component';
+import { DeliverablesComponent } from './deliverables/deliverables.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { StudentComponent } from './student/student.component';
     ProjectsComponent,
     ProjectComponent,
     StudentsComponent,
-    StudentComponent
+    StudentComponent,
+    DeliverablesComponent
   ],
   imports: [
     AppRoutingModule,

@@ -1,0 +1,11 @@
+<div *ngIf="deliverables">
+  <h1>Deliverables</h1>
+  <ul>
+    <li *ngFor="let deliverable of deliverables">
+      <h2>{{deliverable.due}} <a [routerLink]="['/project/', deliverable.projectSlug]">{{deliverable.name}}</a></h2>
+      <p *ngIf="deliverable.description">{{deliverable.description}}</p>
+      <p *ngIf="deliverable.instructions">{{deliverable.instructions}}</p>
+      <p>Upload to: {{deliverablePath(deliverable)}}</p>
+    </li>
+  </ul>
+</div>

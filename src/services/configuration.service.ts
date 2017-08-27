@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
+import * as moment from 'moment';
 
-import { Configuration, Course, Project, Student } from '../definitions/definitions';
+import { Configuration, Course, Project, Student, Deliverable } from '../definitions/definitions';
 
 @Injectable()
 export class ConfigurationService {
@@ -45,5 +46,21 @@ export class ConfigurationService {
     return this.projects()
       .then( (projects: Project[]) => projects
         .find( (project: Project) => project.slug === slug ) );
+  }
+
+  deliverables (): Promise<Deliverable[]> {
+    return this.projects()
+      .then( (projects: Project[]) => projects
+        .reduce( (accumulator: Deliverable[], project: Project) => {
+          return accumulator
+            .concat( project.deliverables
+              .map( (deliverable: Deliverable) => {
+                deliverable.projectSlug = project.slug;
+                return deliverable;
+              }) as Deliverable[]
+            );
+        }, [] )
+        .sort( (a: Deliverable, b: Deliverable) => moment(a.due).valueOf() - moment(b.due).valueOf() )
+      );
   }
 }

@@ -6,6 +6,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ProjectComponent } from './project/project.component';
 import { StudentsComponent } from './students/students.component';
 import { StudentComponent } from './student/student.component';
+import { DeliverablesComponent } from './deliverables/deliverables.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'student/:slug',
     component: StudentComponent
+  },
+  {
+    path: 'deliverables',
+    component: DeliverablesComponent
   },
   {
     path: '',

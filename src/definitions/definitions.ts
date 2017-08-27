@@ -55,6 +55,7 @@ export interface Project extends Assignment {
 }
 
 export interface Deliverable extends Entity {
+  projectSlug?: string;
   assigned: string;
   due: string;
   file: string;
