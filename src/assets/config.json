@@ -61,22 +61,30 @@
     ],
     "projects" : [
       {
-        "type" : "project",
-        "slug" : "p1",
-        "name" : "Project 1",
+        "slug" : "color-grid",
+        "name" : "Color Grid",
         "start" : "2017-08-30",
-        "end" : "2017-09-18",
-        "description" : "This is the first project.",
-        "instructions" : "Make it real good.",
+        "end" : "2017-08-30",
+        "description" : "Let's dust off those HTML and CSS skills.",
+        "instructions" : "",
         "deliverables" : [
           { 
-            "slug" : "d1",
-            "name" : "Deliverable 1",
+            "slug" : "static-4x4",
+            "name" : "4x4 color grid",
             "assigned" : "2017-08-30",
-            "due" : "2017-08-06",
+            "due" : "2017-08-30",
             "file" : "index.html",
-            "description" : "The first deliverable.",
-            "instructions" : "Make it real good."
+            "description" : "",
+            "instructions" : "Make a 4x4 grid of equally-sized rectangles that exactly fills the browser frame, each filled with a different color."
+          },
+          { 
+            "slug" : "hover-4x4",
+            "name" : "4x4 color grid with hover",
+            "assigned" : "2017-08-30",
+            "due" : "2017-08-30",
+            "file" : "index.html",
+            "description" : "",
+            "instructions" : "Make a copy of your color-grid, and make each box change color when hovered."
           }
         ]
       }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ConfigurationService } from '../../services/configuration.service';
-import { Course, Project, Deliverable, Student } from '../../definitions/definitions';
+import { Course } from '../../definitions/definitions';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +20,4 @@ export class HomeComponent implements OnInit {
       .then( course => this.course = course );
   }
 
-  pathFor ( project: Project, deliverable: Deliverable, student: Student ) {
-    return student.basePath + '/' + project.slug + '/' + deliverable.slug + '/' + deliverable.file;
-  }
 }

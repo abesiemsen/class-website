@@ -1,0 +1,18 @@
+<div *ngIf="project && students">
+  <h1>{{project.name}}</h1>
+  <p *ngIf="project.description">{{project.description}}</p>
+  <p *ngIf="project.instructions">{{project.instructions}}</p>
+  <ul>
+    <li *ngFor="let deliverable of project.deliverables">
+      <h2>{{deliverable.name}}</h2>
+      <p *ngIf="deliverable.description">{{deliverable.description}}</p>
+      <p *ngIf="deliverable.instructions">{{deliverable.instructions}}</p>
+      <p>Upload to: {{deliverablePath(project, deliverable)}}</p>
+      <ul>
+        <li *ngFor="let student of students">
+          <a [href]="studentDeliverablePath(project, deliverable, student)">{{student.firstName}} {{student.lastName}}</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

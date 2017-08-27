@@ -1,0 +1,8 @@
+<div *ngIf="projects">
+  <h1>Projects</h1>
+  <ul>
+    <li *ngFor="let project of projects">
+    <a [routerLink]="['/project/', project.slug]" routerLinkActive="active">{{project.name}}</a>
+    </li>
+  </ul>
+</div>

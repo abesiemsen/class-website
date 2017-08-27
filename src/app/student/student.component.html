@@ -1,0 +1,13 @@
+<div *ngIf="student && projects">
+  <h1>{{student.firstName}} {{student.lastName}}</h1>
+  <ul>
+    <li *ngFor="let project of projects">
+      {{project.name}}
+        <ul>
+          <li *ngFor="let deliverable of project.deliverables">
+            <a [href]="pathFor(project, deliverable, student)">{{deliverable.name}}</a>
+          </li>
+        </ul>
+    </li>
+  </ul>
+</div>
