@@ -9,6 +9,7 @@ import { Configuration, Course, Project, Person, Instructor, Student, Deliverabl
 export class ConfigurationService {
 
   private configuration: Configuration;
+  private config = 'https://gist.githubusercontent.com/abesiemsen/916d376e77b659a793d9d8843e3287ee/raw/wudesign-methods-fall2017.json';
 
   constructor ( private http: HttpClient ) {}
 
@@ -16,7 +17,7 @@ export class ConfigurationService {
     if (this.configuration) {
       return Promise.resolve(this.configuration);
     }
-    return this.http.get('/assets/config.json')
+    return this.http.get(this.config)
       .toPromise()
       .then( (configuration: Configuration) => this.configuration = configuration );
   }
