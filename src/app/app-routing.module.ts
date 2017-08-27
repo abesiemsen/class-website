@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
-import { ProjectsComponent } from './projects/projects.component';
-import { ProjectComponent } from './project/project.component';
-import { StudentsComponent } from './students/students.component';
-import { StudentComponent } from './student/student.component';
-import { DeliverablesComponent } from './deliverables/deliverables.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ProjectsComponent } from './pages/projects/projects.component';
+import { ProjectComponent } from './pages/project/project.component';
+import { StudentsComponent } from './pages/students/students.component';
+import { StudentComponent } from './pages/student/student.component';
+import { DeliverablesComponent } from './pages/deliverables/deliverables.component';
 
 const routes: Routes = [
   {

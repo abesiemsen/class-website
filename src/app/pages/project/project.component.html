@@ -1,0 +1,24 @@
+<div *ngIf="project">
+  <h1>{{project.name}}</h1>
+  <p *ngIf="project.description">{{project.description}}</p>
+  <p *ngIf="project.instructions">{{project.instructions}}</p>
+  <ul>
+    <li *ngFor="let deliverableSet of deliverableSets">
+      <h2>{{deliverableSet.deliverable.name}}</h2>
+      <p *ngIf="deliverableSet.deliverable.description">{{deliverableSet.deliverable.description}}</p>
+      <p *ngIf="deliverableSet.deliverable.instructions">{{deliverableSet.deliverable.instructions}}</p>
+      <p>Upload to: <code>(your repo)/{{abstractDeliverableSingleFilePath(project, deliverableSet.deliverable)}}</code> or provide <code>(your repo)/{{abstractDeliverableConfigPath(project, deliverableSet.deliverable)}}</code></p>
+      <ul>
+        <li *ngFor="let personLink of deliverableSet.personLinks">
+          <span *ngIf="!personLink.found || !personLink.file">{{personLink.person.firstName}} {{personLink.person.lastName}}</span>
+          <a *ngIf="personLink.found && personLink.file" [href]="personLink.file">{{personLink.person.firstName}} {{personLink.person.lastName}}</a>
+          <ul *ngIf="personLink.found && personLink.deliverableConfig && personLink.deliverableConfig.entrypoints">
+            <li *ngFor="let entrypoint of personLink.deliverableConfig.entrypoints">
+              <a [href]="entrypoint.file">{{entrypoint.name}}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

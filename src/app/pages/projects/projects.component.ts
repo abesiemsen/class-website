@@ -12,7 +12,9 @@ export class ProjectsComponent implements OnInit {
 
   projects: Project[];
 
-  constructor ( private configuration: ConfigurationService ) {}
+  constructor (
+    private configuration: ConfigurationService
+  ) {}
 
   ngOnInit () {
     this.configuration.projects()

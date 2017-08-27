@@ -15,11 +15,12 @@ export class StudentComponent implements OnInit {
 
   student: Student;
   projects: Project[];
-  
+
   constructor (
     private configuration: ConfigurationService,
     private route: ActivatedRoute,
-    private location: Location ) {}
+    private location: Location
+  ) {}
 
   ngOnInit () {
     const slug: string = this.route.snapshot.paramMap.get('slug');
