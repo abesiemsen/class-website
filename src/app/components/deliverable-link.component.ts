@@ -50,7 +50,7 @@ export class DeliverableLinkComponent implements OnInit {
       .then( (deliverableConfig: DeliverableConfig) => {
         if ( deliverableConfig ) {
           this.found = true;
-          this.deliverableConfig = deliverableConfig;
+          this.deliverableConfig = this.linkService.expandEntrypointPaths(deliverableConfig, this.project, this.deliverable, this.person);
         }
       });
 

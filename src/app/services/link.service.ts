@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
 
-import { Project, Deliverable, Person, DeliverableConfig } from '../definitions/definitions';
+import { Project, Deliverable, Person, DeliverableConfig, Entrypoint } from '../definitions/definitions';
 
 @Injectable()
 export class LinkService {
@@ -20,6 +20,20 @@ export class LinkService {
     return this.http.get(deliverablePath)
       .toPromise()
       .catch( () => undefined );
+  }
+
+  expandEntrypointPaths(
+    deliverableConfig: DeliverableConfig,
+    project: Project,
+    deliverable: Deliverable,
+    person: Person
+  ): DeliverableConfig {
+    deliverableConfig.entrypoints = deliverableConfig.entrypoints
+      .map( (entrypoint: Entrypoint) => {
+        entrypoint.file = this.deliverablePathForPerson(project, deliverable, person) + entrypoint.file;
+        return entrypoint;
+      });
+    return deliverableConfig;
   }
 
 
