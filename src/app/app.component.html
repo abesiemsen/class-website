@@ -1,7 +1,23 @@
-<nav>
-	<a [routerLink]="['/']">Home</a>
-	<a [routerLink]="['/projects']">Projects</a>
-	<a [routerLink]="['/students']">Students</a>
-	<a [routerLink]="['/deliverables']">Deliverables</a>
-</nav>
+<header>
+  <div *ngIf="course">
+    <h3>{{course.context}}</h3>
+    <h1>{{course.name}}</h1>
+    <ul>
+      <li *ngFor="let meetingTime of course.meetingTimes">
+        {{meetingTime.purpose}}: {{meetingTime.days}} {{meetingTime.time}} {{meetingTime.location}}
+      </li>
+    </ul>
+    <ul>
+      <li *ngFor="let instructor of course.instructors">
+        {{instructor.firstName}} {{instructor.lastName}} <a href="mailto:{{instructor.email}}">{{instructor.email}}</a>
+      </li>
+    </ul>
+  </div>
+  <nav>
+    <a [routerLink]="['/syllabus']" [routerLinkActive]="['selected']">Syllabus</a>
+    <a [routerLink]="['/projects']" [routerLinkActive]="['selected']">Projects</a>
+    <a [routerLink]="['/students']" [routerLinkActive]="['selected']">Students</a>
+    <a [routerLink]="['/deliverables']" [routerLinkActive]="['selected']">Deliverables</a>
+  </nav>
+</header>
 <router-outlet></router-outlet>

@@ -1,0 +1,42 @@
+@import "../../../scss/variables";
+
+.deliverables {
+	.cols {
+		display:flex;
+    
+    @media (min-width:720px) {
+      &>* {
+        width: 50%;
+      }
+    }
+
+    &>:first-child,
+    section:first-child h6 {
+      margin-top: 0;
+    }
+
+    .person-links {
+      margin-left: 1em;
+      padding:0;
+      column-count: 2;
+
+      &>li {
+        display: block;
+      }
+    }
+	}
+}
+
+h6 {
+  margin: 1em 0;
+  color: lighten($swatch-body-text, 30%);
+  text-transform: uppercase;
+}
+
+.references {
+  padding: 0;
+
+  li {
+    display: block;
+  }
+}

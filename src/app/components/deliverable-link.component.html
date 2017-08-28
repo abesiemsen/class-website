@@ -1,0 +1,7 @@
+<span *ngIf="!found || !file" [ngClass]="{missing:!found}">{{displayName}}</span>
+<a *ngIf="found && file" [href]="file">{{displayName}}</a>
+<ul *ngIf="found && deliverableConfig && deliverableConfig.entrypoints">
+	<li *ngFor="let entrypoint of deliverableConfig.entrypoints">
+	  <a [href]="entrypoint.file">{{entrypoint.name}}</a>
+	</li>
+</ul>

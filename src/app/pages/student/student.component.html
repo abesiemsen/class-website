@@ -5,7 +5,7 @@
       <a [routerLink]="['/project/', project.slug]">{{project.name}}</a>
         <ul>
           <li *ngFor="let deliverable of project.deliverables">
-            <a [href]="pathFor(project, deliverable, student)">{{deliverable.name}}</a>
+            <wu-deliverable-link [label]="deliverable.name" [project]="project" [deliverable]="deliverable" [person]="student"></wu-deliverable-link>
           </li>
         </ul>
     </li>

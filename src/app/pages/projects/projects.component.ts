@@ -4,7 +4,7 @@ import { ConfigurationService } from '../../services/configuration.service';
 import { Project } from '../../definitions/definitions';
 
 @Component({
-  selector: 'app-projects',
+  selector: 'wu-projects',
   templateUrl: './projects.component.html'
 })
 

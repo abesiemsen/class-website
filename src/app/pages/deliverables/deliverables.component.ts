@@ -4,7 +4,7 @@ import { ConfigurationService } from '../../services/configuration.service';
 import { Deliverable } from '../../definitions/definitions';
 
 @Component({
-  selector: 'app-deliverables',
+  selector: 'wu-deliverables',
   templateUrl: './deliverables.component.html'
 })
 

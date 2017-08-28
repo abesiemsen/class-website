@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './pages/home/home.component';
+import { SyllabusComponent } from './pages/syllabus/syllabus.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { ProjectComponent } from './pages/project/project.component';
 import { StudentsComponent } from './pages/students/students.component';
@@ -10,8 +10,8 @@ import { DeliverablesComponent } from './pages/deliverables/deliverables.compone
 
 const routes: Routes = [
   {
-    path: 'home',
-    component: HomeComponent
+    path: 'syllabus',
+    component: SyllabusComponent
   },
   {
     path: 'projects',
@@ -35,12 +35,12 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: '/syllabus',
     pathMatch: 'full'
   },
   {
     path: '**',
-    redirectTo: '/home',
+    redirectTo: '/syllabus',
     pathMatch: 'full'
   }
 ];

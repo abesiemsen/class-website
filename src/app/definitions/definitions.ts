@@ -23,8 +23,9 @@ export interface Student extends Person {
 }
 
 export interface Course extends Entity {
-  location: Location;
+  meetingTimes: MeetingTime[];
   instructors: Instructor[];
+  syllabus: string;
   students: Student[];
   sessions: Session[];
   projects: Project[];
@@ -34,6 +35,13 @@ export interface Session {
   date: string;
   holiday?: string;
   location?: Location;
+}
+
+export interface MeetingTime {
+  days: string;
+  time: string;
+  location: string;
+  purpose: string;
 }
 
 export interface Location extends Entity {
@@ -62,18 +70,6 @@ export interface Reference {
   name: string;
   link: string;
   description?: string;
-}
-
-export interface DeliverableSet {
-  deliverable: Deliverable;
-  personLinks: PersonLink[];
-}
-
-export interface PersonLink {
-  person: Person;
-  found: boolean;
-  file?: string;
-  deliverableConfig?: DeliverableConfig;
 }
 
 export interface DeliverableConfig {

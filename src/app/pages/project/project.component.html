@@ -1,24 +1,43 @@
-<div *ngIf="project">
+<div *ngIf="ready">
   <h1>{{project.name}}</h1>
   <p *ngIf="project.description">{{project.description}}</p>
   <p *ngIf="project.instructions">{{project.instructions}}</p>
-  <ul>
-    <li *ngFor="let deliverableSet of deliverableSets">
-      <h2>{{deliverableSet.deliverable.name}}</h2>
-      <p *ngIf="deliverableSet.deliverable.description">{{deliverableSet.deliverable.description}}</p>
-      <p *ngIf="deliverableSet.deliverable.instructions">{{deliverableSet.deliverable.instructions}}</p>
-      <p>Upload to: <code>(your repo)/{{abstractDeliverableSingleFilePath(project, deliverableSet.deliverable)}}</code> or provide <code>(your repo)/{{abstractDeliverableConfigPath(project, deliverableSet.deliverable)}}</code></p>
-      <ul>
-        <li *ngFor="let personLink of deliverableSet.personLinks">
-          <span *ngIf="!personLink.found || !personLink.file">{{personLink.person.firstName}} {{personLink.person.lastName}}</span>
-          <a *ngIf="personLink.found && personLink.file" [href]="personLink.file">{{personLink.person.firstName}} {{personLink.person.lastName}}</a>
-          <ul *ngIf="personLink.found && personLink.deliverableConfig && personLink.deliverableConfig.entrypoints">
-            <li *ngFor="let entrypoint of personLink.deliverableConfig.entrypoints">
-              <a [href]="entrypoint.file">{{entrypoint.name}}</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
+
+  <ol class="deliverables">
+    <li *ngFor="let deliverable of project.deliverables">
+      <h2>{{deliverable.name}}</h2>
+      <div class="cols">
+        <div>
+          <section *ngIf="deliverable.description">
+            <h6>Description</h6>
+            <p>{{deliverable.description}}</p>
+          </section>
+          <section *ngIf="deliverable.instructions">
+            <h6>Instructions</h6>
+            <p>{{deliverable.instructions}}</p>
+          </section>
+          <section *ngIf="deliverable.references">
+            <h6>References</h6>
+            <ul class="references">
+              <li *ngFor="let reference of deliverable.references">
+                <a [href]="reference.link">{{reference.name}}</a> - {{reference.description}}
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h6>Upload Path</h6>
+            <code>(your repo)/{{linkService.abstractDeliverableSingleFilePath(project, deliverable)}}</code>
+            <h6>Or provide deliverable.json</h6>
+            <code>(your repo)/{{linkService.abstractDeliverableConfigPath(project, deliverable)}}</code>
+          </section>
+        </div>
+        <ul class="person-links">
+          <li *ngFor="let person of persons">
+            <wu-deliverable-link [project]="project" [deliverable]="deliverable" [person]="person"></wu-deliverable-link>
+          </li>
+        </ul>
+      </div>
     </li>
-  </ul>
+  </ol>
+
 </div>

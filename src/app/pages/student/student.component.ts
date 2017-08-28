@@ -7,7 +7,7 @@ import { ConfigurationService } from '../../services/configuration.service';
 import { Project, Deliverable, Student } from '../../definitions/definitions';
 
 @Component({
-  selector: 'app-student',
+  selector: 'wu-student',
   templateUrl: './student.component.html'
 })
 
@@ -26,7 +26,7 @@ export class StudentComponent implements OnInit {
     const slug: string = this.route.snapshot.paramMap.get('slug');
     this.configuration.projects()
       .then( (projects: Project[]) => this.projects = projects );
-    this.configuration.student(slug)
+    this.configuration.person(slug)
       .then( (student: Student) => this.student = student );
   }
 

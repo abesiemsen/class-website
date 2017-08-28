@@ -1,0 +1,9 @@
+@import "../../scss/variables";
+
+* {
+	font-size: 0.8rem;
+} 
+
+.missing {
+	color: lighten($swatch-body-text, 50%);
+}

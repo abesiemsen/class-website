@@ -4,7 +4,7 @@ import { ConfigurationService } from '../../services/configuration.service';
 import { Student } from '../../definitions/definitions';
 
 @Component({
-  selector: 'app-students',
+  selector: 'wu-students',
   templateUrl: './students.component.html'
 })
 
@@ -15,7 +15,7 @@ export class StudentsComponent implements OnInit {
   constructor ( private configuration: ConfigurationService ) {}
 
   ngOnInit () {
-    this.configuration.students()
+    this.configuration.persons()
       .then( students => this.students = students );
   }
 
