@@ -37,11 +37,6 @@ const routes: Routes = [
     path: '',
     redirectTo: '/syllabus',
     pathMatch: 'full'
-  },
-  {
-    path: '**',
-    redirectTo: '/syllabus',
-    pathMatch: 'full'
   }
 ];
 
