@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -39,7 +39,8 @@ import { HelpComponent } from './components/help.component';
   providers: [
     ConfigurationService,
     LinkService,
-    SyllabusService
+    SyllabusService,
+    Title
   ],
   bootstrap: [
     AppComponent
