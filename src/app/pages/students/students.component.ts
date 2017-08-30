@@ -15,7 +15,7 @@ export class StudentsComponent implements OnInit {
   constructor ( private configuration: ConfigurationService ) {}
 
   ngOnInit () {
-    this.configuration.persons()
+    this.configuration.students()
       .then( students => this.students = students );
   }
 

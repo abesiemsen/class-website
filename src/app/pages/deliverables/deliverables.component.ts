@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as moment from 'moment';
 
 import { ConfigurationService } from '../../services/configuration.service';
 import { Deliverable } from '../../definitions/definitions';
@@ -21,6 +22,10 @@ export class DeliverablesComponent implements OnInit {
 
   deliverablePath (deliverable: Deliverable): string {
     return '/' + deliverable.projectSlug + '/' + deliverable.slug + '/' + deliverable.file;
+  }
+
+  formatDate(date: string): string {
+    return moment(date).format('MMM D');
   }
 
 }

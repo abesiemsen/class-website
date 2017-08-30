@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 import 'rxjs/add/operator/map';
+import * as moment from 'moment';
 
 import { ConfigurationService } from '../../services/configuration.service';
 import { LinkService } from '../../services/link.service';
@@ -40,8 +41,12 @@ export class ProjectComponent implements OnInit {
   }
 
   private loadPersons (): Promise<Person[]> {
-    return this.configuration.persons()
+    return this.configuration.students()
       .then( (persons: Person[]) => this.persons = persons );
+  }
+
+  formatDate(date: string): string {
+    return moment(date).format('MMM D');
   }
 
 }

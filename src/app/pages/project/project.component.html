@@ -1,11 +1,35 @@
 <div *ngIf="ready">
   <h1>{{project.name}}</h1>
-  <div *ngIf="project.description" [innerHTML]="project.description"></div>
-  <div *ngIf="project.instructions" [innerHTML]="project.instructions"></div>
-
+  <p>{{formatDate(project.start)}} &ndash; {{formatDate(project.end)}}</p>
+  <div class="cols">
+    <div>
+      <div *ngIf="project.description" [innerHTML]="project.description"></div>
+      <div *ngIf="project.instructions" [innerHTML]="project.instructions"></div>
+    </div>
+    <aside *ngIf="project.references||project.examples">
+      <section *ngIf="project.references">
+        <h6>References</h6>
+        <ul class="references">
+          <li *ngFor="let reference of project.references">
+            <a [href]="reference.link">{{reference.name}}</a> - {{reference.description}}
+          </li>
+        </ul>
+      </section>
+      <section *ngIf="project.examples">
+        <h6>Examples and inspiration</h6>
+        <ul class="examples">
+          <li *ngFor="let example of project.examples">
+            <a [href]="example.link" target="_blank"><span *ngIf="example.name">{{example.name}}</span><span *ngIf="!example.name">{{example.link}}</span></a>
+          </li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+  <h3>Deliverables</h3>
   <ol class="deliverables">
     <li *ngFor="let deliverable of project.deliverables">
       <h2>{{deliverable.name}}</h2>
+      <p>{{formatDate(deliverable.assigned)}} &ndash; {{formatDate(deliverable.due)}}</p>
       <div class="cols">
         <div>
           <section *ngIf="deliverable.description">
@@ -14,7 +38,7 @@
           </section>
           <section *ngIf="deliverable.instructions">
             <h6>Instructions</h6>
-            <p>{{deliverable.instructions}}</p>
+            <div [innerHTML]="deliverable.instructions"></div>
           </section>
           <section *ngIf="deliverable.references">
             <h6>References</h6>
@@ -24,10 +48,18 @@
               </li>
             </ul>
           </section>
+          <section *ngIf="deliverable.examples">
+            <h6>Examples and inspiration</h6>
+            <ul class="examples">
+              <li *ngFor="let example of deliverable.examples">
+                <a [href]="example.link" target="_blank"><span *ngIf="example.name">{{example.name}}</span><span *ngIf="!example.name">{{example.link}}</span></a>
+              </li>
+            </ul>
+          </section>
           <section>
             <h6>Upload Path</h6>
             <code>(your repo)/{{linkService.abstractDeliverableSingleFilePath(project, deliverable)}}</code>
-            <h6>Or provide deliverable.json</h6>
+            <h6>Or provide <a target="_blank" href="https://gist.githubusercontent.com/abesiemsen/916d376e77b659a793d9d8843e3287ee/raw/deliverable.json">deliverable.json</a></h6>
             <code>(your repo)/{{linkService.abstractDeliverableConfigPath(project, deliverable)}}</code>
           </section>
         </div>

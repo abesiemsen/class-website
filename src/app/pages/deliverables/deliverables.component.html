@@ -2,10 +2,10 @@
 <div *ngIf="deliverables">
   <ul>
     <li *ngFor="let deliverable of deliverables">
-      <h2>{{deliverable.due}} <a [routerLink]="['/project/', deliverable.projectSlug]">{{deliverable.name}}</a></h2>
-      <p *ngIf="deliverable.description">{{deliverable.description}}</p>
-      <p *ngIf="deliverable.instructions">{{deliverable.instructions}}</p>
-      <p>Upload to: {{deliverablePath(deliverable)}}</p>
+      <h2><a [routerLink]="['/project/', deliverable.projectSlug]">{{deliverable.name}}</a></h2>
+      <p>{{formatDate(deliverable.assigned)}} &ndash; {{formatDate(deliverable.due)}}</p>
+      <div *ngIf="deliverable.description" [innerHTML]="deliverable.description"></div>
+      <div *ngIf="deliverable.instructions" [innerHTML]="deliverable.instructions"></div>
     </li>
   </ul>
 </div>

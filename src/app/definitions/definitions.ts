@@ -54,6 +54,7 @@ export interface Project extends Entity {
   instructions?: string;
   deliverables?: Deliverable[];
   references?: Reference[];
+  examples?: Example[];
 }
 
 export interface Deliverable extends Entity {
@@ -64,12 +65,18 @@ export interface Deliverable extends Entity {
   description?: string;
   instructions?: string;
   references?: Reference[];
+  examples?: Example[];
 }
 
 export interface Reference {
-  name: string;
+  name?: string;
   link: string;
   description?: string;
+}
+
+export interface Example {
+  name?: string;
+  link: string;
 }
 
 export interface DeliverableConfig {

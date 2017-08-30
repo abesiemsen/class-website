@@ -42,8 +42,8 @@ export class DeliverableLinkComponent implements OnInit {
       .then( (found: boolean) => {
         if ( found ) {
           this.found = true;
-          this.file = singlePath;
         }
+        this.file = singlePath;
       });
 
     this.linkService.loadDeliverableConfig(multiPath)
