@@ -4,6 +4,19 @@
 	font-size: 0.8rem;
 } 
 
+ul {
+	padding-left: 0.5rem;
+
+	li {
+		display: block;
+
+		a {
+			font-size: 0.8em;
+		}
+		
+	}
+}
+
 .missing {
 	color: lighten($swatch-body-text, 50%);
 }
