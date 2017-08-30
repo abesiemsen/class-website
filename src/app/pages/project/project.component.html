@@ -1,7 +1,7 @@
 <div *ngIf="ready">
   <h1>{{project.name}}</h1>
-  <p *ngIf="project.description">{{project.description}}</p>
-  <p *ngIf="project.instructions">{{project.instructions}}</p>
+  <div *ngIf="project.description" [innerHTML]="project.description"></div>
+  <div *ngIf="project.instructions" [innerHTML]="project.instructions"></div>
 
   <ol class="deliverables">
     <li *ngFor="let deliverable of project.deliverables">
@@ -10,7 +10,7 @@
         <div>
           <section *ngIf="deliverable.description">
             <h6>Description</h6>
-            <p>{{deliverable.description}}</p>
+            <div [innerHTML]="deliverable.description"></div>
           </section>
           <section *ngIf="deliverable.instructions">
             <h6>Instructions</h6>

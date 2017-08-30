@@ -3,7 +3,7 @@
   <ul>
     <li *ngFor="let project of projects">
       <h2><a [routerLink]="['/project/', project.slug]" routerLinkActive="active">{{project.name}}</a></h2>
-      <p>{{project.description}}</p>
+      <div [innerHTML]="project.description"></div>
       <p>Begin: {{project.start}}</p>
     </li>
   </ul>
