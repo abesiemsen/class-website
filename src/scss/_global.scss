@@ -40,6 +40,15 @@ code {
   color: $swatch-code;
 }
 
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+
 
 header {
   color: lighten($swatch-body-text, 50%);
