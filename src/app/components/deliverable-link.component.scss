@@ -7,3 +7,16 @@
 .missing {
 	color: lighten($swatch-body-text, 50%);
 }
+
+ul {
+	padding-left: 0.5rem;
+
+	li {
+		display: inline-block;
+		margin-right: 0.5em;
+
+		a {
+			font-size: 0.6rem;
+		}
+	}
+}
