@@ -22,6 +22,14 @@ export class ProjectsComponent implements OnInit {
       .then( projects => this.projects = projects );
   }
 
+  get visibleProjects (): Project[] {
+    if (!this.projects) {
+      return [];
+    }
+    return this.projects
+      .filter( project => project.hidden !== true );
+  }
+
   formatDate(date: string): string {
     return moment(date).format('MMM D');
   }

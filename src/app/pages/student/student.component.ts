@@ -30,6 +30,22 @@ export class StudentComponent implements OnInit {
       .then( (student: Student) => this.student = student );
   }
 
+  public get visibleProjects(): Project[] {
+    if (!this.projects) {
+      return [];
+    }
+    return this.projects
+      .filter( project => project.hidden !== true );
+  }
+
+  public visibleDeliverables(project: Project): Deliverable[] {
+    if (!project) {
+      return [];
+    }
+    return project.deliverables
+      .filter( deliverable => deliverable.hidden !== true );
+  }
+
   pathFor ( project: Project, deliverable: Deliverable, student: Student ) {
     return student.basePath + '/' + project.slug + '/' + deliverable.slug + '/' + deliverable.file;
   }

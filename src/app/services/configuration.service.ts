@@ -77,6 +77,7 @@ export class ConfigurationService {
   deliverables (): Promise<Deliverable[]> {
     return this.projects()
       .then( (projects: Project[]) => projects
+        .filter( (project: Project) => project.hidden !== true )
         .reduce( (accumulator: Deliverable[], project: Project) => {
           return accumulator
             .concat( project.deliverables

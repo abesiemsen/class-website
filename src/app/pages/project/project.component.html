@@ -26,8 +26,8 @@
     </aside>
   </div>
   <h3>Deliverables</h3>
-  <ol class="deliverables">
-    <li *ngFor="let deliverable of project.deliverables">
+  <ol class="deliverables" *ngIf="project.deliverables">
+    <li *ngFor="let deliverable of visibleDeliverables">
       <h2>{{deliverable.name}}</h2>
       <p>{{formatDate(deliverable.assigned)}} &ndash; {{formatDate(deliverable.due)}}</p>
       <div class="cols">

@@ -50,6 +50,7 @@ export interface Location extends Entity {
 }
 
 export interface Project extends Entity {
+  hidden?: boolean;
   description?: string;
   instructions?: string;
   deliverables?: Deliverable[];
@@ -59,6 +60,7 @@ export interface Project extends Entity {
 
 export interface Deliverable extends Entity {
   projectSlug?: string;
+  hidden?: boolean;
   assigned: string;
   due: string;
   file: string;

@@ -20,6 +20,14 @@ export class DeliverablesComponent implements OnInit {
       .then( deliverables => this.deliverables = deliverables );
   }
 
+  public get visibleDeliverables (): Deliverable[] {
+    if (!this.deliverables) {
+      return [];
+    }
+    return this.deliverables
+      .filter( deliverable => deliverable.hidden !== true );
+  }
+
   deliverablePath (deliverable: Deliverable): string {
     return '/' + deliverable.projectSlug + '/' + deliverable.slug + '/' + deliverable.file;
   }

@@ -45,6 +45,14 @@ export class ProjectComponent implements OnInit {
       .then( (persons: Person[]) => this.persons = persons );
   }
 
+  public get visibleDeliverables (): Deliverable[] {
+    if (!this.project) {
+      return [];
+    }
+    return this.project.deliverables
+      .filter( deliverable => deliverable.hidden !== true );
+  }
+
   formatDate(date: string): string {
     return moment(date).format('MMM D');
   }
