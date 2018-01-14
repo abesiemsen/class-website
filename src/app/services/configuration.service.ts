@@ -9,7 +9,7 @@ import { Configuration, Course, Project, Person, Instructor, Student, Deliverabl
 export class ConfigurationService {
 
   private configuration: Configuration;
-  private config = 'https://gist.githubusercontent.com/abesiemsen/916d376e77b659a793d9d8843e3287ee/raw/wudesign-methods-fall2017.json';
+  private config = 'https://gist.githubusercontent.com/abesiemsen/00043f6ce1a3d1dad4e897bfe540ab83/raw/applications2018spring.wudesign.me.json';
 
   constructor ( private http: HttpClient ) {}
 
