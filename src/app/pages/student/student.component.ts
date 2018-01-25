@@ -43,7 +43,7 @@ export class StudentComponent implements OnInit {
       return [];
     }
     return project.deliverables
-      .filter( deliverable => deliverable.hidden !== true );
+      .filter( deliverable => deliverable.hidden !== true && typeof deliverable.file != 'undefined' );
   }
 
   pathFor ( project: Project, deliverable: Deliverable, student: Student ) {

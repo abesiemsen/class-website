@@ -63,7 +63,7 @@ export interface Deliverable extends Entity {
   hidden?: boolean;
   assigned: string;
   due: string;
-  file: string;
+  file?: string;
   description?: string;
   instructions?: string;
   references?: Reference[];
